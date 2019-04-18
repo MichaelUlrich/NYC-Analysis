@@ -14,9 +14,9 @@
   <button onclick="drawHospitalGraph()">DRAW RADAR GRAPH</button>
   <button onclick="drawLineGraph()">DRAW LINE GRAPH</button>
   <div class="container">
-    <canvas id="myCanvas" ></canvas>
+    <canvas id="myCanvas" width="200" height="100" ></canvas>
   </div>
-    <script>
+  <script>
     var RED = 'rgba(255, 99, 132, 0.2)' ,
         RED_SLD = 'rgba(255, 99, 132, 0.6)' ,
         RED_OUT = 'rgba(255, 99, 132, 1)' ,
@@ -39,89 +39,65 @@
       if(window.testChart && window.testChart !== null){ //Check if window is being used
         window.testChart.destroy(); //clear window
       }
-        var myChart = document.getElementById('myCanvas').getContext('2d');
-        window.testChart = new Chart(myChart, {
-          type:'bar', //bar, horizontalBar, pie, line, doughnut, radar, polarArea
-          data:{
-            labels:['White', 'Hispanic', 'Black', 'Asian'],
-            datasets:[{
-              label:'High School',
-              data:[
-                685,
-                3230,
-                4802,
-                279
-              ],
-              //backgroundColor:'green'
-              backgroundColor:[
-                RED_SLD, //red
-                BLUE_SLD, //blue
-                YELLOW_SLD, //yellow
-                CYAN_SLD, //cyan
-              ],
-              borderWidth:1,
-              borderColor:'#777',
-              hoverBorderWidth:3,
-              hoverBorderColor:'#000'
-            }, {
-              label:'Middle School',
-              fill: true,
-              data:[
-                320,
-                900,
-                1120,
-                70
-              ],
-              //backgroundColor:'green'
-              backgroundColor:[
-                RED_SLD, //red
-                BLUE_SLD, //blue
-                YELLOW_SLD, //yellow
-                CYAN_SLD, //cyan
-              ],
-              borderWidth:1,
-              borderColor:'#777',
-              hoverBorderWidth:3,
-              hoverBorderColor:'#000'
-              }, {
-              label:'Elementary School',
-              data:[
-                15,
-                94,
-                136,
-                4
-              ],
-              //backgroundColor:'green'
-              backgroundColor:[
-                RED_SLD, //red
-                BLUE_SLD, //blue
-                YELLOW_SLD, //yellow
-                CYAN_SLD, //cyan
-              ],
-              borderWidth:1,
-              borderColor:'#777',
-              hoverBorderWidth:3,
-              hoverBorderColor:'#000'
-            }]
-          },
-          options:{
-            fontSize:25,
-            fontSize:'Lato',
-            title:{
+      var myChart = document.getElementById('myCanvas').getContext('2d');
+      window.testChart = new Chart(myChart, {
+        type:'bar', //bar, horizontalBar, pie, line, doughnut, radar, polarArea
+        data:{
+          labels:['High School', 'Middle School', 'Elementary'],
+          datasets:[{
+            label:'White',
+            data:[685, 320, 15],
+            backgroundColor:[RED_SLD, RED_SLD, RED_SLD],//, BLUE_SLD, YELLOW_SLD, CYAN_SLD],
+            borderWidth:1,
+            borderColor:'#777',
+            hoverBorderWidth:3,
+            hoverBorderColor:'#000'
+          }, {
+            label:'Hispanic',
+            fill: true,
+            data:[3230, 900, 136],//, 70],
+            backgroundColor:[BLUE_SLD, BLUE_SLD, BLUE_SLD],
+            borderWidth:1,
+            borderColor:'#777',
+            hoverBorderWidth:3,
+            hoverBorderColor:'#000'
+          }, {
+            label:'Black',
+            data:[4802, 1120, 136],
+            backgroundColor:[YELLOW_SLD, YELLOW_SLD, YELLOW_SLD],
+            borderWidth:1,
+            borderColor:'#777',
+            hoverBorderWidth:3,
+            hoverBorderColor:'#000'
+          }, {
+            label:'Asian',
+            data:[279,70, 4],
+            backgroundColor:[CYAN_SLD, CYAN_SLD, CYAN_SLD],
+            borderWidth:1,
+            borderColor:'#777',
+            hoverBorderWidth:3,
+            hoverBorderColor:'#000'
+          }]
+        },
+        options:{
+          fontSize:25,
+          fontSize:'Lato',
+          title:{
               display:true,
               text:'Student Removals from School by Race',
               fontSize:25
             },
-            legend:{
+          legend:{
               position:'right',
-              fillStyle: 'none',
+              fillStyle: BLUE_OUT,
               labels:{
                 fontColor:'black',
                 font:'Lato',
-                fontSize:25
+                fontSize:25,
+                strokeStyle:RED_OUT
               }
             },
-            layout:{
+          layout:{
               padding: {
                 left:0,
                 right:0,
@@ -129,19 +105,19 @@
                 top:0
               }
             },
-            tooltips:{
+          tooltips:{
               enabled:true
             }
-          }
-        });
-      }
+        }
+      });
+    }
     function drawPieGraph() {
       var myChart = document.getElementById('myCanvas').getContext('2d');
       if(window.testChart && window.testChart !== null){ //Check if window is being used
         window.testChart.destroy(); //Clear window
       }
         window.testChart = new Chart(myChart, {
-        type:'pie', //bar, horizontalBar, pie, line, doughnut, radar, polarArea
+        type:'doughnut', //bar, horizontalBar, pie, line, doughnut, radar, polarArea
         data:{
           labels:['White', 'Hispanic', 'Black', 'Asian'],
             datasets:[{
@@ -249,15 +225,17 @@
             label:'Harlem Hospital Center',
             data:[61, 64, 48, 57, 57, 51, 42, 54],
             backgroundColor:[YELLOW],
+            borderColor:[YELLOW_OUT]
           }, {
               label:'Coney Island',
               data:[64, 68, 57, 64, 52, 79, 56, 54],
               backgroundColor:[BLUE],
+              borderColor:[BLUE_OUT]
           }, {
             label:'Bellevue Hosptial',
             data:[56, 63, 49, 55, 54, 80, 58, 64],
             backgroundColor:[RED],
-            outlineColor:[RED]
+            borderColor:[RED_OUT]
           }]
         },
         options:{
@@ -278,13 +256,19 @@
           labels:{
               fontColor:'black',
               font:'Lato',
-              fontSize:25
+              fontSize:50
           },
           scale:{
             ticks:{
               min:0,
               max:100,
-              stepSize:10
+              stepSize:10,
+              fontSize:10,
+              font:'Lato'
+            },
+            pointLabels: {
+              fontSize:16,
+              padding:10
             }
           }
         }
@@ -307,8 +291,8 @@
             }, {
               label:'Hispanic Mean Score',
               data:[647, 657, 664, 673, 673, 673],
-              backgroundColor:[ORANGE],
-              borderColor:[ORANGE_OUT]
+              backgroundColor:[YELLOW],
+              borderColor:[YELLOW_OUT]
             }, {
               label:'White Mean Score',
               data:[676, 684, 690, 696, 695, 695],
@@ -338,7 +322,12 @@
             labels:{
                 fontColor:'black',
                 font:'Lato',
-                fontSize:25
+                fontSize:25,
+                pointBackgroudColor:'Black',
+                pointBorderColor:'Black',
+                pointBorderWidth:10,
+                pointHoverBorderColor:'green'
+
             }
           },
         });
