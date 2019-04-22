@@ -10,11 +10,20 @@
 </head>
 <body>
   <button onclick="drawBarGraph()">DRAW BAR GRAPH</button>
-  <button onclick="drawPieGraph()">DRAW PIE GRAPH</button>
+  <!--<button onclick="drawPieGraph()">DRAW PIE GRAPH</button>-->
   <button onclick="drawHospitalGraph()">DRAW RADAR GRAPH</button>
   <button onclick="drawLineGraph()">DRAW LINE GRAPH</button>
   <div class="container">
+    chart1
     <canvas id="myCanvas" width="200" height="100" ></canvas>
+  </div>
+  <div class="container">
+    chart2
+    <canvas id="myCanvas2" width="200" height="100" ></canvas>
+  </div>
+  <div class="container">
+    chart3
+    <canvas id="myCanvas3" width="200" height="100" ></canvas>
   </div>
   <script>
     var RED = 'rgba(255, 99, 132, 0.2)' ,
@@ -36,9 +45,9 @@
         PURPLE_SLD = 'rgba(153, 102, 255, 0.6)',
         PURPLE_OUT = 'rgba(153, 102, 255, 1)' ;
     function drawBarGraph() {
-      if(window.testChart && window.testChart !== null){ //Check if window is being used
-        window.testChart.destroy(); //clear window
-      }
+      //if(window.testChart && window.testChart !== null){ //Check if window is being used
+      //  window.testChart.destroy(); //clear window
+      //}
       var myChart = document.getElementById('myCanvas').getContext('2d');
       window.testChart = new Chart(myChart, {
         type:'bar', //bar, horizontalBar, pie, line, doughnut, radar, polarArea
@@ -210,14 +219,14 @@
             }
           }
         });
-      }
+      } //Depreciated
     function drawHospitalGraph() {
-      if(window.testChart && window.testChart !== null){ //Check if window is being used
-        window.testChart.destroy(); //clear window
-      }
-      var myChart = document.getElementById('myCanvas').getContext('2d');
+      //if(window.testChart && window.testChart !== null){ //Check if window is being used
+      //  window.testChart.destroy(); //clear window
+      //}
+      var myChart = document.getElementById('myCanvas2').getContext('2d');
       window.testChar = new Chart(myChart, {
-        type: 'radar',
+        type: 'polarArea',
         data:{
           labels:['Clean', 'Communication', 'Quck Care', 'Patient Control',
           'Properly Explain', 'Shared Info', 'Overall Rating', 'Would Reccomend'],
@@ -275,10 +284,10 @@
       });
     }
     function drawLineGraph() {
-      if(window.testChart && window.testChart !== null){ //Check if window is being used
-        window.testChart.destroy(); //clear window
-      }
-        var myChart = document.getElementById('myCanvas').getContext('2d');
+      //if(window.testChart && window.testChart !== null){ //Check if window is being used
+      //  window.testChart.destroy(); //clear window
+      //}
+        var myChart = document.getElementById('myCanvas3').getContext('2d');
         window.testChart = new Chart(myChart, {
           type:'line',
           data:{
