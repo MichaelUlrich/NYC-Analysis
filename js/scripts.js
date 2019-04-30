@@ -1,26 +1,22 @@
-<script>
-  var RED = 'rgba(255, 99, 132, 0.2)' ,
-      RED_SLD = 'rgba(255, 99, 132, 0.6)' ,
-      RED_OUT = 'rgba(255, 99, 132, 1)' ,
-      BLUE = 'rgba(54, 162, 235, 0.2)' ,
-      BLUE_SLD = 'rgba(54, 162, 235, 0.6)' ,
-      BLUE_OUT = 'rgba(54, 162, 235, 1)' ,
-      YELLOW = 'rgba(255, 250, 125, 0.2)' ,
-      YELLOW_SLD = 'rgba(255, 250, 125, 0.6)' ,
-      YELLOW_OUT = 'rgba(255, 250, 125, 1)'
-      CYAN = 'rgba(75, 192, 192, 0.2)' ,
-      CYAN_SLD = 'rgba(75, 192, 192, 0.6)' ,
-      CYAN_OUT = 'rgba(75, 192, 192, 1)' ,
-      ORANGE = 'rgba(255, 159, 64, 0.2)' ,
-      ORANGE_SLD = 'rgba(255, 159, 64, 0.6)' ,
-      ORANGE_OUT = 'rgba(255, 159, 64, 1)' ,
-      PURPLE = 'rgba(153, 102, 255, 0.2)',
-      PURPLE_SLD = 'rgba(153, 102, 255, 0.6)',
-      PURPLE_OUT = 'rgba(153, 102, 255, 1)' ;
+var RED = 'rgba(255, 99, 132, 0.2)' ,
+    RED_SLD = 'rgba(255, 99, 132, 0.6)' ,
+    RED_OUT = 'rgba(255, 99, 132, 1)' ,
+    BLUE = 'rgba(54, 162, 235, 0.2)' ,
+    BLUE_SLD = 'rgba(54, 162, 235, 0.6)' ,
+    BLUE_OUT = 'rgba(54, 162, 235, 1)' ,
+    YELLOW = 'rgba(255, 250, 125, 0.2)' ,
+    YELLOW_SLD = 'rgba(255, 250, 125, 0.6)' ,
+    YELLOW_OUT = 'rgba(255, 250, 125, 1)'
+    CYAN = 'rgba(75, 192, 192, 0.2)' ,
+    CYAN_SLD = 'rgba(75, 192, 192, 0.6)' ,
+    CYAN_OUT = 'rgba(75, 192, 192, 1)' ,
+    ORANGE = 'rgba(255, 159, 64, 0.2)' ,
+    ORANGE_SLD = 'rgba(255, 159, 64, 0.6)' ,
+    ORANGE_OUT = 'rgba(255, 159, 64, 1)' ,
+    PURPLE = 'rgba(153, 102, 255, 0.2)',
+    PURPLE_SLD = 'rgba(153, 102, 255, 0.6)',
+    PURPLE_OUT = 'rgba(153, 102, 255, 1)' ;
   function drawBarGraph() {
-    //if(window.testChart && window.testChart !== null){ //Check if window is being used
-    //  window.testChart.destroy(); //clear window
-    //}
     var myChart = document.getElementById('myCanvas').getContext('2d');
     window.testChart = new Chart(myChart, {
       type:'bar', //bar, horizontalBar, pie, line, doughnut, radar, polarArea
@@ -314,4 +310,3 @@
         },
       });
   }
-</script>
