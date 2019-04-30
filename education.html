@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>NYC-Analysis Education</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css"
+</head>
+<body>
+<script>
+  var RED = 'rgba(255, 99, 132, 0.2)' ,
+      RED_SLD = 'rgba(255, 99, 132, 0.6)' ,
+      RED_OUT = 'rgba(255, 99, 132, 1)' ,
+      BLUE = 'rgba(54, 162, 235, 0.2)' ,
+      BLUE_SLD = 'rgba(54, 162, 235, 0.6)' ,
+      BLUE_OUT = 'rgba(54, 162, 235, 1)' ,
+      YELLOW = 'rgba(255, 250, 125, 0.2)' ,
+      YELLOW_SLD = 'rgba(255, 250, 125, 0.6)' ,
+      YELLOW_OUT = 'rgba(255, 250, 125, 1)'
+      CYAN = 'rgba(75, 192, 192, 0.2)' ,
+      CYAN_SLD = 'rgba(75, 192, 192, 0.6)' ,
+      CYAN_OUT = 'rgba(75, 192, 192, 1)' ,
+      ORANGE = 'rgba(255, 159, 64, 0.2)' ,
+      ORANGE_SLD = 'rgba(255, 159, 64, 0.6)' ,
+      ORANGE_OUT = 'rgba(255, 159, 64, 1)' ,
+      PURPLE = 'rgba(153, 102, 255, 0.2)',
+      PURPLE_SLD = 'rgba(153, 102, 255, 0.6)',
+      PURPLE_OUT = 'rgba(153, 102, 255, 1)' ;
+  function drawBarGraph() {
+    var myChart = document.getElementById('myCanvas').getContext('2d');
+    window.testChart = new Chart(myChart, {
+      type:'bar', //bar, horizontalBar, pie, line, doughnut, radar, polarArea
+      data:{
+        labels:['High School', 'Middle School', 'Elementary'],
+        datasets:[{
+          label:'White',
+          data:[685, 320, 15],
+          backgroundColor:[RED_SLD, RED_SLD, RED_SLD],//, BLUE_SLD, YELLOW_SLD, CYAN_SLD],
+          borderWidth:1,
+          borderColor:'#777',
+          hoverBorderWidth:3,
+          hoverBorderColor:'#000'
+        }, {
+          label:'Hispanic',
+          fill: true,
+          data:[3230, 900, 136],//, 70],
+          backgroundColor:[BLUE_SLD, BLUE_SLD, BLUE_SLD],
+          borderWidth:1,
+          borderColor:'#777',
+          hoverBorderWidth:3,
+          hoverBorderColor:'#000'
+        }, {
+          label:'Black',
+          data:[4802, 1120, 136],
+          backgroundColor:[YELLOW_SLD, YELLOW_SLD, YELLOW_SLD],
+          borderWidth:1,
+          borderColor:'#777',
+          hoverBorderWidth:3,
+          hoverBorderColor:'#000'
+        }, {
+          label:'Asian',
+          data:[279,70, 4],
+          backgroundColor:[CYAN_SLD, CYAN_SLD, CYAN_SLD],
+          borderWidth:1,
+          borderColor:'#777',
+          hoverBorderWidth:3,
+          hoverBorderColor:'#000'
+        }]
+      },
+      options:{
+        aspectRatio: 1,
+        fontSize:25,
+        fontSize:'Lato',
+        maintainAspectRatio: true,
+        responsive: false,
+        title:{
+            display:true,
+            text:'Student Removals from School by Race',
+            fontSize:25
+          },
+        legend:{
+            position:'right',
+            fillStyle: BLUE_OUT,
+            labels:{
+              fontColor:'black',
+              font:'Lato',
+              fontSize:25,
+              strokeStyle:RED_OUT
+            }
+          },
+        layout:{
+            padding: {
+              left:0,
+              right:0,
+              bottom:0,
+              top:0
+            }
+          },
+        tooltips:{
+            enabled:true
+          }
+      }
+    });
+  }
+</script>
+<div class="header">
+  <h1>NYC-Analysis</h1>
+</div>
+<div class="topnav">
+  <a href="health.html">Health</a>
+  <a href="education.html">Education</a>
+  <a href="geographic.html">Geographic Records</a>
+  <a href="crime.html">Crime Records</a>
+  <a href="index.html" style="float:right">Home</a>
+</div>
+<div class="row">
+    <div class="quadcolumn">
+      <div class="card" onClick="drawBarGraph()" style="hover:background-color: yellow;">
+        <h2>Student Removals</h2>
+        <h5>Title description, Dec 7, 2017</h5>
+        <div class="fakeimg" style="height:200px;">Image</div>
+        <p>Some text..</p>
+        <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+      </div>
+    </div>
+  <div class="quadcolumn">
+    <div class="card">
+      <h2>NY State Testing Results</h2>
+      <h5>Title description, Dec 7, 2017</h5>
+      <div class="fakeimg" style="height:200px;">Image</div>
+      <p>Some text..</p>
+      <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+    </div>
+  </div>
+  <div class="quadcolumn">
+    <div class="card">
+      <h2>Student Demographics</h2>
+      <h5>Title description, Dec 7, 2017</h5>
+      <div class="fakeimg" style="height:200px;">Image</div>
+      <p>Some text..</p>
+      <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+    </div>
+  </div>
+  <div class="quadcolumn">
+    <div class="card">
+      <h2>Student Discipline Report</h2>
+      <h5>Title description, Dec 7, 2017</h5>
+      <div class="fakeimg" style="height:200px;">Image</div>
+      <p>Some text..</p>
+      <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+    </div>
+  </div>
+</div>
+<div class="chartcolumn">
+  <canvas id="myCanvas" class="canvas" width="960px" height="500px" style="margin-right: 0;"></canvas>
+</div>
+<div class="summarycolumn">
+</div>
+<div class="footer">
+  <h2>NYC-Analysis</h2>
+  <p>Michael, Tanvir, Eric, Felix</p>
+</div>
+
+</body>
+</html>
