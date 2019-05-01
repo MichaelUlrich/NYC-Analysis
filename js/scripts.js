@@ -1321,7 +1321,7 @@ var RED = 'rgba(255, 99, 132, 0.2)' ,
       window.testChart = new Chart(myChart3, {
         type:'bar',
         data:{
-          labels:['Superintdent Involvement Precentage'],
+          labels:['Superintendent Involvement Precentage'],
           datasets:[{
             label:'Black ',
             data:[4964],
@@ -1363,7 +1363,7 @@ var RED = 'rgba(255, 99, 132, 0.2)' ,
         options:{
           title:{
             display:true,
-            text:'Students Sent to Superintdent',
+            text:'Students Sent to Superintendent',
             fontSize:25,
             fontFamily:'Lato'
           },
@@ -1410,7 +1410,7 @@ var RED = 'rgba(255, 99, 132, 0.2)' ,
             hoverBorderWidth:3,
             hoverBorderColor:'#000'
           }, {
-            label:'Superintdent Involvement',
+            label:'Superintendent Involvement',
             data:[4964, 3562, 553, 320],
             backgroundColor:[CYAN_SLD,CYAN_SLD, CYAN_SLD, CYAN_SLD],
             borderColor:[CYAN_OUT],
