@@ -311,10 +311,28 @@ var RED = 'rgba(255, 99, 132, 0.2)' ,
         },
       });
   }
+  //#######################################
+  function redrawGraphs() {
+    //.desstroy() not working so I added to remove flickering when redrawing charts
+    var chart1 = document.getElementById("column1"),
+        chart2 = document.getElementById("column2"),
+        chart3 = document.getElementById("column3"),
+        chart4 = document.getElementById("column4");
+        //Clear each element
+        chart1.innerHTML = "";
+        chart2.innerHTML = "";
+        chart3.innerHTML = "";
+        chart4.innerHTML = "";
+        //Redraw element
+        chart1.innerHTML = '<canvas id="myCanvas" class="canvas" width="200" height="100"></canvas>';
+        chart2.innerHTML = '<canvas id="myCanvas2" class="canvas" width="200" height="100"></canvas>';
+        chart3.innerHTML = '<canvas id="myCanvas3" class="canvas" width="200" height="100"></canvas>';
+        chart4.innerHTML = '<canvas id="myCanvas4" class="canvas" width="200" height="100"></canvas>';
+  }
   //Education###############################
   function studentRemovals() {
     if(window.testChart && window.testChart !== null){ //Check if window is being used
-      window.testChart.update(); //Clear window
+      redrawGraphs(); //Clear window
       //Function to re-draw HTML?
     }
     var myChart  = document.getElementById('myCanvas').getContext('2d');
@@ -604,7 +622,7 @@ var RED = 'rgba(255, 99, 132, 0.2)' ,
   }
   function testResults() {
     if(window.testChart && window.testChart !== null){ //Check if window is being used
-      window.testChart.update(); //Clear window
+      redrawGraphs(); //Clear window
     }
       var myChart = document.getElementById('myCanvas').getContext('2d');
       var myChart2 = document.getElementById('myCanvas2').getContext('2d');
@@ -645,10 +663,13 @@ var RED = 'rgba(255, 99, 132, 0.2)' ,
           },
           legend:{
             position:'right',
-            fillStyle: 'none',
-            fontColor:'black',
-            font:'Lato',
-            fontSize:25
+            fillStyle: BLUE_OUT,
+            labels:{
+              fontColor:'black',
+              font:'Lato',
+              fontSize:25,
+              strokeStyle:RED_OUT
+            }
           },
           labels:{
               fontColor:'black',
@@ -697,10 +718,13 @@ var RED = 'rgba(255, 99, 132, 0.2)' ,
           },
           legend:{
             position:'right',
-            fillStyle: 'none',
-            fontColor:'black',
-            font:'Lato',
-            fontSize:25
+            fillStyle: BLUE_OUT,
+            labels:{
+              fontColor:'black',
+              font:'Lato',
+              fontSize:25,
+              strokeStyle:RED_OUT
+            }
           },
           labels:{
               fontColor:'black',
@@ -764,11 +788,13 @@ var RED = 'rgba(255, 99, 132, 0.2)' ,
             fontFamily:'Lato'
           },
           legend:{
-            position:'right',
-            fillStyle: 'none',
-            fontColor:'black',
-            font:'Lato',
-            fontSize:25
+            position: 'right',
+            labels:{
+              fontColor:'black',
+              font:'Lato',
+              fontSize:25,
+              strokeStyle:RED_OUT
+            }
           },
           labels:{
             fontColor:'black',
@@ -835,11 +861,13 @@ var RED = 'rgba(255, 99, 132, 0.2)' ,
             fontFamily:'Lato'
           },
           legend:{
-            position:'right',
-            fillStyle: 'none',
-            fontColor:'black',
-            font:'Lato',
-            fontSize:25
+            position: 'right',
+            labels:{
+              fontColor:'black',
+              font:'Lato',
+              fontSize:25,
+              strokeStyle:RED_OUT
+            }
           },
           labels:{
               fontColor:'black',
@@ -856,7 +884,7 @@ var RED = 'rgba(255, 99, 132, 0.2)' ,
   }
   function studentDemographics() {
     if(window.testChart && window.testChart !== null){ //Check if window is being used
-      window.testChart.update(); //Clear window
+      redrawGraphs(); //Clear window
     }
       var myChart = document.getElementById('myCanvas').getContext('2d');
       var myChart2 = document.getElementById('myCanvas2').getContext('2d');
@@ -912,11 +940,13 @@ var RED = 'rgba(255, 99, 132, 0.2)' ,
             fontFamily:'Lato'
           },
           legend:{
-            position:'right',
-            fillStyle: 'none',
-            fontColor:'black',
-            font:'Lato',
-            fontSize:25
+            position: 'right',
+            labels:{
+              fontColor:'black',
+              font:'Lato',
+              fontSize:25,
+              strokeStyle:RED_OUT
+            }
           },
           labels:{
               fontColor:'black',
@@ -979,11 +1009,13 @@ var RED = 'rgba(255, 99, 132, 0.2)' ,
             fontFamily:'Lato'
           },
           legend:{
-            position:'right',
-            fillStyle: 'none',
-            fontColor:'black',
-            font:'Lato',
-            fontSize:25
+            position: 'right',
+            labels:{
+              fontColor:'black',
+              font:'Lato',
+              fontSize:25,
+              strokeStyle:RED_OUT
+            }
           },
           labels:{
               fontColor:'black',
@@ -1047,11 +1079,13 @@ var RED = 'rgba(255, 99, 132, 0.2)' ,
             fontFamily:'Lato'
           },
           legend:{
-            position:'right',
-            fillStyle: 'none',
-            fontColor:'black',
-            font:'Lato',
-            fontSize:25
+            position: 'right',
+            labels:{
+              fontColor:'black',
+              font:'Lato',
+              fontSize:25,
+              strokeStyle:RED_OUT
+            }
           },
           labels:{
               fontColor:'black',
@@ -1115,11 +1149,13 @@ var RED = 'rgba(255, 99, 132, 0.2)' ,
             fontFamily:'Lato'
           },
           legend:{
-            position:'right',
-            fillStyle: 'none',
-            fontColor:'black',
-            font:'Lato',
-            fontSize:25
+            position: 'right',
+            labels:{
+              fontColor:'black',
+              font:'Lato',
+              fontSize:25,
+              strokeStyle:RED_OUT
+            }
           },
           labels:{
               fontColor:'black',
@@ -1136,7 +1172,7 @@ var RED = 'rgba(255, 99, 132, 0.2)' ,
   }
   function disciplineReport() {
     if(window.testChart && window.testChart !== null){ //Check if window is being used
-      window.testChart.update(); //Clear window
+      redrawGraphs(); //Clear window
     }
       var myChart = document.getElementById('myCanvas').getContext('2d');
       var myChart2 = document.getElementById('myCanvas2').getContext('2d');
@@ -1147,7 +1183,7 @@ var RED = 'rgba(255, 99, 132, 0.2)' ,
         data:{
           labels:['Students Removal Precentage'],
           datasets:[{
-            label:'Black (%)',
+            label:'Black',
             data:[5154],
             backgroundColor:[BLUE_SLD],
             borderColor:[BLUE_OUT],
@@ -1156,7 +1192,7 @@ var RED = 'rgba(255, 99, 132, 0.2)' ,
             hoverBorderWidth:3,
             hoverBorderColor:'#000'
           }, {
-            label:'Hispanic (%)',
+            label:'Hispanic ',
             data:[4477],
             backgroundColor:[YELLOW_SLD],
             borderColor:[YELLOW_OUT],
@@ -1165,7 +1201,7 @@ var RED = 'rgba(255, 99, 132, 0.2)' ,
             hoverBorderWidth:3,
             hoverBorderColor:'#000'
           }, {
-            label:'White (%)',
+            label:'White ',
             data:[1035],
             backgroundColor:[PURPLE_SLD],
             borderColor:[PURPLE_OUT],
@@ -1174,7 +1210,7 @@ var RED = 'rgba(255, 99, 132, 0.2)' ,
             hoverBorderWidth:3,
             hoverBorderColor:'#000'
           }, {
-            label:'Asian (%)',
+            label:'Asian ',
             data:[484],
             backgroundColor:[RED_SLD],
             borderColor:[RED_OUT],
@@ -1192,11 +1228,13 @@ var RED = 'rgba(255, 99, 132, 0.2)' ,
             fontFamily:'Lato'
           },
           legend:{
-            position:'right',
-            fillStyle: 'none',
-            fontColor:'black',
-            font:'Lato',
-            fontSize:25
+            position: 'right',
+            labels:{
+              fontColor:'black',
+              font:'Lato',
+              fontSize:25,
+              strokeStyle:RED_OUT
+            }
           },
           labels:{
               fontColor:'black',
@@ -1215,7 +1253,7 @@ var RED = 'rgba(255, 99, 132, 0.2)' ,
         data:{
           labels:['Principal Involvement Precentage'],
           datasets:[{
-            label:'Black(%)',
+            label:'Black',
             data:[11565],
             backgroundColor:[BLUE_SLD],
             borderColor:[BLUE_OUT],
@@ -1224,7 +1262,7 @@ var RED = 'rgba(255, 99, 132, 0.2)' ,
             hoverBorderWidth:3,
             hoverBorderColor:'#000'
           }, {
-            label:'Hispanic(%)',
+            label:'Hispanic',
             data:[10023],
             backgroundColor:[YELLOW_SLD],
             borderColor:[YELLOW_OUT],
@@ -1233,7 +1271,7 @@ var RED = 'rgba(255, 99, 132, 0.2)' ,
             hoverBorderWidth:3,
             hoverBorderColor:'#000'
           }, {
-            label:'White(%)',
+            label:'White',
             data:[2313],
             backgroundColor:[PURPLE_SLD],
             borderColor:[PURPLE_OUT],
@@ -1242,7 +1280,7 @@ var RED = 'rgba(255, 99, 132, 0.2)' ,
             hoverBorderWidth:3,
             hoverBorderColor:'#000'
           }, {
-            label:'Asian(%)',
+            label:'Asian',
             data:[1356],
             backgroundColor:[RED_SLD],
             borderColor:[RED_OUT],
@@ -1260,11 +1298,13 @@ var RED = 'rgba(255, 99, 132, 0.2)' ,
             fontFamily:'Lato'
           },
           legend:{
-            position:'right',
-            fillStyle: 'none',
-            fontColor:'black',
-            font:'Lato',
-            fontSize:25
+            position: 'right',
+            labels:{
+              fontColor:'black',
+              font:'Lato',
+              fontSize:25,
+              strokeStyle:RED_OUT
+            }
           },
           labels:{
               fontColor:'black',
@@ -1283,7 +1323,7 @@ var RED = 'rgba(255, 99, 132, 0.2)' ,
         data:{
           labels:['Superintdent Involvement Precentage'],
           datasets:[{
-            label:'Black (%)',
+            label:'Black ',
             data:[4964],
             backgroundColor:[BLUE_SLD, BLUE_SLD, BLUE_SLD, BLUE_SLD],
             borderColor:[BLUE_OUT],
@@ -1292,7 +1332,7 @@ var RED = 'rgba(255, 99, 132, 0.2)' ,
             hoverBorderWidth:3,
             hoverBorderColor:'#000'
           }, {
-            label:'Hispanic (%)',
+            label:'Hispanic ',
             data:[3562],
             backgroundColor:[YELLOW_SLD, YELLOW_SLD, YELLOW_SLD, YELLOW_SLD],
             borderColor:[YELLOW_OUT],
@@ -1301,7 +1341,7 @@ var RED = 'rgba(255, 99, 132, 0.2)' ,
             hoverBorderWidth:3,
             hoverBorderColor:'#000'
           }, {
-            label:'White (%)',
+            label:'White ',
             data:[553],
             backgroundColor:[PURPLE_SLD,PURPLE_SLD, PURPLE_SLD, PURPLE_SLD],
             borderColor:[PURPLE_OUT],
@@ -1310,7 +1350,7 @@ var RED = 'rgba(255, 99, 132, 0.2)' ,
             hoverBorderWidth:3,
             hoverBorderColor:'#000'
           }, {
-            label:'Asian (%)',
+            label:'Asian ',
             data:[320],
             backgroundColor:[RED_SLD, RED_SLD, RED_SLD, RED_SLD],
             borderColor:[RED_OUT],
@@ -1328,11 +1368,13 @@ var RED = 'rgba(255, 99, 132, 0.2)' ,
             fontFamily:'Lato'
           },
           legend:{
-            position:'right',
-            fillStyle: 'none',
-            fontColor:'black',
-            font:'Lato',
-            fontSize:25
+            position: 'right',
+            labels:{
+              fontColor:'black',
+              font:'Lato',
+              fontSize:25,
+              strokeStyle:RED_OUT
+            }
           },
           labels:{
               fontColor:'black',
@@ -1386,11 +1428,13 @@ var RED = 'rgba(255, 99, 132, 0.2)' ,
             fontFamily:'Lato'
           },
           legend:{
-            position:'right',
-            fillStyle: 'none',
-            fontColor:'black',
-            font:'Lato',
-            fontSize:25
+            position: 'right',
+            labels:{
+              fontColor:'black',
+              font:'Lato',
+              fontSize:25,
+              strokeStyle:RED_OUT
+            }
           },
           labels:{
               fontColor:'black',
