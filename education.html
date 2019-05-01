@@ -5,15 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>NYC-Analysis Education</title>
-  t>
+  <script type="text/javascript "src="js/scripts.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <script type="text/javascript "src="js/scripts.js"></scrip
   <script type="text/javascript">
-    drawBarGraph();
+    studentRemovals();
+    testResults();
+    studentDemographics();
+    disciplineReport();
   </script>
   <div class="header">
     <h1>NYC-Analysis</h1>
@@ -27,7 +29,7 @@
   </div>
   <div class="row">
     <div class="quadcolumn">
-        <div class="card" onClick="drawBarGraph()" style="hover:background-color: yellow;">
+        <div class="card" onClick="studentRemovals()">
           <h2>Student Removals</h2>
           <h5>Title description, Dec 7, 2017</h5>
           <div class="fakeimg" style="height:200px;">Image</div>
@@ -36,7 +38,7 @@
         </div>
       </div>
     <div class="quadcolumn">
-      <div class="card">
+      <div class="card" onClick="testResults()">
         <h2>NY State Testing Results</h2>
         <h5>Title description, Dec 7, 2017</h5>
         <div class="fakeimg" style="height:200px;">Image</div>
@@ -45,7 +47,7 @@
       </div>
     </div>
     <div class="quadcolumn">
-      <div class="card">
+      <div class="card" onClick="studentDemographics()">
         <h2>Student Demographics</h2>
         <h5>Title description, Dec 7, 2017</h5>
         <div class="fakeimg" style="height:200px;">Image</div>
@@ -54,7 +56,7 @@
       </div>
     </div>
     <div class="quadcolumn">
-      <div class="card">
+      <div class="card" onClick="disciplineReport()">
         <h2>Student Discipline Report</h2>
         <h5>Title description, Dec 7, 2017</h5>
         <div class="fakeimg" style="height:200px;">Image</div>
@@ -64,12 +66,16 @@
     </div>
   </div>
   <div class="chartcolumn">
-    <canvas id="myCanvas" class="canvas" width="960px" height="500px" style="margin-right: 0;"></canvas>
+    <canvas id="myCanvas" class="canvas" width="200" height="100"></canvas>
   </div>
-  <div class="summarycolumn"></div>
-  <div class="footer">
-    <h2>NYC-Analysis</h2>
-    <p>Michael, Tanvir, Eric, Felix</p>
+  <div class="chartcolumn">
+    <canvas id="myCanvas2" class="canvas" width="200" height="100"></canvas>
+  </div>
+  <div class="chartcolumn">
+    <canvas id="myCanvas3" class="canvas" width="200" height="100"></canvas>
+  </div>
+  <div class="chartcolumn">
+    <canvas id="myCanvas4" class="canvas" width="200" height="100"></canvas>
   </div>
 </body>
 </html>
