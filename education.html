@@ -16,6 +16,7 @@
     testResults();
     studentDemographics();
     disciplineReport();
+    //redrawGraphs();
   </script>
   <div class="header">
     <h1>NYC-Analysis</h1>
@@ -27,6 +28,7 @@
     <a href="crime.html">Crime Records</a>
     <a href="index.html" style="float:right">Home</a>
   </div>
+  <!--<button onclick="redrawGraphs()">clear</button>-->
   <div class="row">
     <div class="quadcolumn">
         <div class="card" onClick="studentRemovals()">
@@ -65,16 +67,16 @@
       </div>
     </div>
   </div>
-  <div class="chartcolumn">
+  <div class="chartcolumn" id="column1">
     <canvas id="myCanvas" class="canvas" width="200" height="100"></canvas>
   </div>
-  <div class="chartcolumn">
+  <div class="chartcolumn" id="column2">
     <canvas id="myCanvas2" class="canvas" width="200" height="100"></canvas>
   </div>
-  <div class="chartcolumn">
+  <div class="chartcolumn" id="column3">
     <canvas id="myCanvas3" class="canvas" width="200" height="100"></canvas>
   </div>
-  <div class="chartcolumn">
+  <div class="chartcolumn" id="column4">
     <canvas id="myCanvas4" class="canvas" width="200" height="100"></canvas>
   </div>
 </body>
