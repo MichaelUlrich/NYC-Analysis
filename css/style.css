@@ -95,7 +95,7 @@ body {
   margin-top: 20px;
 }
 .card:hover {
-  background-color: yellow;
+  background-color: #C3CAD1;
 }
 /* Clear floats after the columns */
 .row:after {
