@@ -636,25 +636,30 @@ var RED = 'rgba(255, 99, 132, 0.2)' ,
             label:'Black Mean Score',
             data:[644, 654, 661, 669, 669, 670],
             backgroundColor:[BLUE],
+            fill:false,
             borderColor:[BLUE_OUT],
           }, {
             label:'Hispanic Mean Score',
             data:[647, 657, 664, 673, 673, 673],
             backgroundColor:[YELLOW],
+            fill:false,
             borderColor:[YELLOW_OUT],
           }, {
             label:'White Mean Score',
             data:[676, 684, 690, 696, 695, 695],
             backgroundColor:[PURPLE],
+            fill:false,
             borderColor:[PURPLE_OUT],
           }, {
             label:'Asian Mean Score',
             data:[687, 695, 700, 705, 703, 702],
             backgroundColor:[RED],
+            fill:false,
             borderColor:[RED_OUT],
           }]
         },
         options:{
+          background:false,
           title:{
             display:true,
             text:'Mean NYS Math Scores from 2006-2011',
@@ -680,7 +685,8 @@ var RED = 'rgba(255, 99, 132, 0.2)' ,
               pointBorderWidth:10,
               pointHoverBorderColor:'green'
 
-          }
+          },
+          fill:false
         },
       });
       window.testChart = new Chart(myChart2, {
@@ -691,21 +697,25 @@ var RED = 'rgba(255, 99, 132, 0.2)' ,
             label:'Black Mean Score',
             data:[641, 645, 650, 656, 656, 656],
             backgroundColor:[BLUE],
+            fill:false,
             borderColor:[BLUE_OUT]
           }, {
             label:'Hispanic Mean Score',
             data:[642, 643, 648, 656, 656 ,656],
             backgroundColor:[YELLOW],
+            fill:false,
             borderColor:[YELLOW_OUT]
           }, {
             label:'White Mean Score',
             data:[670, 671, 672, 676, 675, 671],
             backgroundColor:[PURPLE],
+            fill:false,
             borderColor:[PURPLE_OUT]
           }, {
             label:'Asian Mean Score',
             data:[672,669,670,676,674,669],
             backgroundColor:[RED],
+            fill:false,
             borderColor:[RED_OUT]
           }]
         },
