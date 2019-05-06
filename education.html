@@ -4,43 +4,61 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>NYC-Analysis Education</title>
   <script type="text/javascript "src="js/scripts.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" href="css/style.css">
+<title>NYC-Analysis Education</title>
 </head>
+<style>
+.vertical-menu {
+  height: 1500px;
+  overflow-y: scroll;
+}
+.vertical-menu a {
+  background-color: #eee;
+  color: black;
+  display: block;
+  padding: 12px;
+  text-decoration: none;
+}
+.vertical-menu a:hover {
+  background-color: #ccc;
+}
+.vertical-menu a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+</style>
+<script>
+  studentRemovals();
+  testResults();
+  studentDemographics();
+  disciplineReport();
+</script>
 <body>
-  <script type="text/javascript">
-    studentRemovals();
-    testResults();
-    studentDemographics();
-    disciplineReport();
-    //redrawGraphs();
-  </script>
-  <div class="header">
-    <h1>NYC-Analysis</h1>
-  </div>
-  <div class="topnav">
-    <a href="health.html">Health</a>
-    <a href="education.html">Education</a>
-    <a href="geographic.html">Geographic Records</a>
-    <a href="crime.html">Crime Records</a>
-    <a href="index.html" style="float:right">Home</a>
-  </div>
-  <!--<button onclick="redrawGraphs()">clear</button>-->
-  <div class="row">
-    <div class="quadcolumn">
-        <div class="card" onClick="studentRemovals()" style="height: 470px;">
-          <h2>Student Removals</h2>
-          <div class="fakeimg" style="height:200px;">Image</div>
-          <p>Student removals (Suspensions) from school broken down by race for High School, Middle School, and Elementary School</p><br>
-          <h2>Similar Topics</h2>
-          <a href="crime.html">Crimial Records and Discipline</a>
-        </div>
+<div class="header">
+  <h1>NYC-Analysis</h1>
+</div>
+<div class="topnav">
+  <a href="health.html">Health</a>
+  <a href="education.html">Education</a>
+  <a href="geographic.html">Geographic Records</a>
+  <a href="crime.html">Crime Records</a>
+  <a href="all.html">All Datasets</a>
+  <a href="index.html" style="float:right">Home</a>
+</div>
+<div class="row">
+  <div class="quadcolumn" id="scrollbar">
+    <div class="vertical-menu">
+      <div class="card" onclick="studentRemovals()">
+        <h2>Student Removals</h2>
+        <div class="fakeimg" style="height:200px;">Image</div>
+        <p>Student removals (Suspensions) from school broken down by race for High School, Middle School, and Elementary School</p><br>
+        <h2>Similar Topics</h2>
+        <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
       </div>
-    <div class="quadcolumn">
-      <div class="card" onClick="testResults()" style="height: 470px;">
+      <div class="card" onclick="testResults()">
         <h2>NY State Testing Results</h2>
         <div class="fakeimg" style="height:200px;">Image</div>
         <p>Mean test results for NYC standaize testing on Mathematics and English by race and placments from Level 1 to Level 4.</p>
@@ -49,19 +67,14 @@
         <p>NYS Level 3: Proficient</p>
         <p>NYS Level 4: Extremely proficient</p>
       </div>
-    </div>
-    <div class="quadcolumn">
-      <div class="card" onClick="studentDemographics()" style="height: 470px;">
+      <div class="card" onclick="studentDemographics()">
         <h2>Student Demographics</h2>
         <div class="fakeimg" style="height:200px;">Image</div>
         <p>Racial demographics of students from Pre-Kindergarten classes, along with Elementary Schools, Middle Schools, High Schoools</p><br>
         <h2>Similar Topics</h2>
         <a href="crime.html">Geographic Records</a>
-        <p></p>
       </div>
-    </div>
-    <div class="quadcolumn">
-      <div class="card" onClick="disciplineReport()" style="height: 470px;">
+      <div class="card" onclick="disciplineReport()">
         <h2>Student Discipline Report</h2>
         <div class="fakeimg" style="height:200px;">Image</div>
         <p>All other forms of student disciplin broken down by student race.  This includes classroom removals, Principal involvement, Superintendent involvement</p><br>
@@ -70,17 +83,34 @@
       </div>
     </div>
   </div>
-  <div class="chartcolumn" id="column1">
-    <canvas id="myCanvas" class="canvas" width="200" height="100"></canvas>
+  <div class="quadcolumn" id="graphColumn" style="width: 800px;">
+      <div id="column1" style="width:700px">
+        <canvas id="myCanvas" class="canvas" width="200" height="100"></canvas>
+      </div>
+      <div id="column2" style="width:700px">
+        <canvas id="myCanvas2" class="canvas" width="200" height="100"></canvas>
+      </div>
+      <div id="column3" style="width:700px">
+        <canvas id="myCanvas3" class="canvas" width="200" height="100"></canvas>
+      </div>
+      <div id="column4" style="width:700px">
+        <canvas id="myCanvas4" class="canvas" width="200" height="100"></canvas>
+      </div>
   </div>
-  <div class="chartcolumn" id="column2">
-    <canvas id="myCanvas2" class="canvas" width="200" height="100"></canvas>
+  <div class="quadcolumn" id="summaryColumn" style="position: relative;">
+      <div class="card"  style="height:360px;">
+        <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+      </div>
+      <div class="card"  style="height:300px;">
+        <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+      </div>
+      <div class="card"  style="height:360px;">
+        <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+      </div>
+      <div class="card" style="height:300px;">
+        <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+      </div>
   </div>
-  <div class="chartcolumn" id="column3">
-    <canvas id="myCanvas3" class="canvas" width="200" height="100"></canvas>
-  </div>
-  <div class="chartcolumn" id="column4">
-    <canvas id="myCanvas4" class="canvas" width="200" height="100"></canvas>
-  </div>
+</div>
 </body>
 </html>
