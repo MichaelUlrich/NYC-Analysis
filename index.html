@@ -5,11 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>NYC-Analysis Education</title>
+  <script type="text/javascript "src="js/scripts.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body onload="demoGraph()">
 <div class="header">
   <h1>NYC-Analysis</h1>
 </div>
@@ -23,181 +24,44 @@
 </div>
 <div class="row">
   <div class="leftcolumn">
-  <!--  <div class="row">
-      <div class="quadcolumn">
-        <div class="card" onClick="drawBarGraph()" style="hover:background-color: yellow;">
-          <h2>Public Housing Demographics</h2>
-          <h5>Title description, Dec 7, 2017</h5>
-          <div class="fakeimg" style="height:200px;">Image</div>
-          <p>Some text..</p>
-          <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
-        </div>
+    <div class="card-noclick">
+      <h1>Welcome to NYC-Analysis</h1>
+    </div>
+    <div class="card-noclick">
+      <h2>Graph Interactivity</h2>
+      <p>Throughout NYC-Analysis you will find multiple interactive graphs that can be interacted with to help analyze data.</p>
+      <p>In the Legend of each graph you can click to enable/disable a data object to change the graph</p>
+      <div id="column1">
+        <canvas id="myCanvas" class="canvas" width="400" height="300"></canvas>
       </div>
-      <div class="quadcolumn">
-        <div class="card">
-          <h2>Families in Public Housing</h2>
-          <h5>Title description, Dec 7, 2017</h5>
-          <div class="fakeimg" style="height:200px;">Image</div>
-          <p>Some text..</p>
-          <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
-        </div>
-      </div>
-      <div class="quadcolumn">
-        <div class="card">
-          <h2>Time Spent in Public Housing</h2>
-          <h5>Title description, Dec 7, 2017</h5>
-          <div class="fakeimg" style="height:200px;">Image</div>
-          <p>Some text..</p>
-          <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
-        </div>
-      </div>
-      <div class="quadcolumn">
-        <div class="card">
-          <h2>Income</h2>
-          <h5>Title description, Dec 7, 2017</h5>
-          <div class="fakeimg" style="height:200px;">Image</div>
-          <p>Some text..</p>
-          <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
-        </div>
+      <div class="card">
       </div>
     </div>
-    <div class="row">
-      <div class="quadcolumn">
-        <div class="card" onClick="drawBarGraph()" style="hover:background-color: yellow;">
-          <h2>NYC Causes of Death</h2>
-          <h5>Title description, Dec 7, 2017</h5>
-          <div class="fakeimg" style="height:200px;">Image</div>
-          <p>Some text..</p>
-          <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
-        </div>
-      </div>
-      <div class="quadcolumn">
-        <div class="card">
-          <h2>NYC Children and Lead</h2>
-          <h5>Title description, Dec 7, 2017</h5>
-          <div class="fakeimg" style="height:200px;">Image</div>
-          <p>Some text..</p>
-          <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
-        </div>
-      </div>
-      <div class="quadcolumn">
-        <div class="card">
-          <h2>HIV Diagnoses</h2>
-          <h5>Title description, Dec 7, 2017</h5>
-          <div class="fakeimg" style="height:200px;">Image</div>
-          <p>Some text..</p>
-          <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
-        </div>
-      </div>
-      <div class="quadcolumn">
-        <div class="card">
-          <h2>NYC Hospitals</h2>
-          <h5>Title description, Dec 7, 2017</h5>
-          <div class="fakeimg" style="height:200px;">Image</div>
-          <p>Some text..</p>
-          <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="quadcolumn">
-        <div class="card" onClick="drawBarGraph()" style="hover:background-color: yellow;">
-          <h2>Prison Admissions</h2>
-          <h5>Title description, Dec 7, 2017</h5>
-          <div class="fakeimg" style="height:200px;">Image</div>
-          <p>Some text..</p>
-          <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
-        </div>
-      </div>
-      <div class="quadcolumn">
-        <div class="card">
-          <h2>Current Prison Demographics</h2>
-          <h5>Title description, Dec 7, 2017</h5>
-          <div class="fakeimg" style="height:200px;">Image</div>
-          <p>Some text..</p>
-          <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
-        </div>
-      </div>
-      <div class="quadcolumn">
-        <div class="card">
-          <h2>NYPD Arrest History</h2>
-          <h5>Title description, Dec 7, 2017</h5>
-          <div class="fakeimg" style="height:200px;">Image</div>
-          <p>Some text..</p>
-          <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
-        </div>
-      </div>
-      <div class="quadcolumn">
-        <div class="card">
-          <h2>Victim Demographics</h2>
-          <h5>Title description, Dec 7, 2017</h5>
-          <div class="fakeimg" style="height:200px;">Image</div>
-          <p>Some text..</p>
-          <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="quadcolumn">
-          <div class="card" onClick="studentRemovals()">
-            <h2>Student Removals</h2>
-            <h5>Title description, Dec 7, 2017</h5>
-            <div class="fakeimg" style="height:200px;">Image</div>
-            <p>Some text..</p>
-            <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
-          </div>
-        </div>
-      <div class="quadcolumn">
-        <div class="card" onClick="testResults()">
-          <h2>NY State Testing Results</h2>
-          <h5>Title description, Dec 7, 2017</h5>
-          <div class="fakeimg" style="height:200px;">Image</div>
-          <p>Some text..</p>
-          <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
-        </div>
-      </div>
-      <div class="quadcolumn">
-        <div class="card" onClick="studentRemovals()">
-          <h2>Student Demographics</h2>
-          <h5>Title description, Dec 7, 2017</h5>
-          <div class="fakeimg" style="height:200px;">Image</div>
-          <p>Some text..</p>
-          <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
-        </div>
-      </div>
-      <div class="quadcolumn">
-        <div class="card" onClick="studentRemovals()">
-          <h2>Student Discipline Report</h2>
-          <h5>Title description, Dec 7, 2017</h5>
-          <div class="fakeimg" style="height:200px;">Image</div>
-          <p>Some text..</p>
-          <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
-        </div>
-      </div>
-    </div> -->
   </div>
   <div class="quadcolumn">
-    <div class="card">
-      <h2>About Me</h2>
-      <img src="img/simple-pie-chart.svg" style="height:200px">
-      <p>Some text about me in culpa qui officia deserunt mollit anim..</p>
-    </div>
-    <div class="card">
-      <h3>Popular Post</h3>
-      <div class="fakeimg"><p>Image</p></div>
-      <div class="fakeimg"><p>Image</p></div>
-      <div class="fakeimg"><p>Image</p></div>
-    </div>
-    <div class="card">
-      <h3>Follow Me</h3>
-      <p>Some text..</p>
-    </div>
+    <a href="health.html" class="sidebar-link">
+      <div class="card">
+        <h3>Health and Related Datasets</h3>
+      </div>
+    </a>
+    <a href="education.html">
+      <div class="card">
+        <h3>Education and Related Datasets</h3>
+      </div>
+    <a href="geographic.html">
+      <div class="card">
+        <h3>Geographic and Demographic Datasets</h3>
+      </div>
+    <a href="crime.html">
+      <div class="card">
+        <h3>Crime and Punishment Datasets</h3>
+      </div>
+    </a>
   </div>
 </div>
 <div class="footer">
   <h2>NYC-Analysis</h2>
   <p>Michael, Tanvir, Eric, Felix</p>
 </div>
-
 </body>
 </html>
