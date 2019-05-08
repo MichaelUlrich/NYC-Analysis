@@ -40,6 +40,7 @@ body {
 .leftcolumn {
   float: left;
   width: 75%;
+  padding-left: 25%;
 }
 /* Right column */
 .rightcolumn {
@@ -94,8 +95,14 @@ body {
   padding: 20px;
   margin-top: 20px;
 }
+.card-noclick {
+  background-color: white;
+  padding: 20px;
+  margin-top: 20px;
+}
 .card:hover {
   background-color: #C3CAD1;
+  cursor:pointer;
 }
 /* Clear floats after the columns */
 .row:after {
@@ -128,6 +135,14 @@ body {
 .vertical-menu a.active {
   background-color: #4CAF50;
   color: white;
+}
+.quadcolumn a{
+  color: black;
+  font-family: Arial;
+  padding: 10px;
+  font-size: 15px;
+  text-align: center;
+
 }
 /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 800px) {
