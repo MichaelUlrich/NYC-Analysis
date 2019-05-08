@@ -340,15 +340,86 @@ var RED = 'rgba(255, 99, 132, 0.2)' ,
         chart3.innerHTML = '<canvas id="myCanvas3" class="canvas" width="200" height="100"></canvas>';
         chart4.innerHTML = '<canvas id="myCanvas4" class="canvas" width="200" height="100"></canvas>';
   } //Done
+  function drawSummarys(summary1, summary2, summary3, summary4) {
+    document.getElementById('card1').innerHTML = summary1;
+    document.getElementById('card2').innerHTML = summary2;
+    document.getElementById('card3').innerHTML = summary3;
+    document.getElementById('card4').innerHTML = summary4;
+
+  }
+  function demoGraph() {
+    var myChart = document.getElementById('myCanvas').getContext('2d');
+    window.testChart = new Chart(myChart, {
+      type:'line',
+      data:{
+        labels:['2006', '2007', '2008', '2009', '2010', '2011'],
+        datasets:[{
+          label:'CLICK ME TO TURN ME OFF!',
+          data:[644, 654, 661, 669, 669, 670],
+          backgroundColor:[BLUE_SLD],
+          borderColor:[BLUE_OUT],
+          fill:false
+        }, {
+          label:'CLICK ME TO TURN ME OFF!',
+          data:[647, 657, 664, 673, 673, 673],
+          backgroundColor:[GREEN_SLD],
+          borderColor:[GREEN_OUT],
+          fill:false
+        }, {
+          label:'CLICK ME TO TURN ME OFF!',
+          data:[676, 684, 690, 696, 695, 695],
+          backgroundColor:[PURPLE_SLD],
+          borderColor:[PURPLE_OUT],
+          fill:false
+        }, {
+          label:'CLICK ME TO TURN ME OFF!',
+          data:[687, 695, 700, 705, 703, 702],
+          backgroundColor:[RED_SLD],
+          borderColor:[RED_OUT],
+          fill:false
+        }]
+      },
+      options:{
+        title:{
+          display:true,
+          text:'Demo Graph',
+          fontSize:25,
+          fontFamily:'Lato'
+        },
+        legend:{
+          position:'right',
+          fillStyle: 'none',
+          fontColor:'black',
+          font:'Lato',
+          fontSize:25
+        },
+        labels:{
+            fontColor:'black',
+            font:'Lato',
+            fontSize:25,
+            pointBackgroudColor:'Black',
+            pointBorderColor:'Black',
+            pointBorderWidth:10,
+            pointHoverBorderColor:'green'
+
+        }
+      },
+    });
+  }
   //Education###############################
   function studentRemovals() {
     if(window.testChart && window.testChart !== null){ //Check if window is being used
       redrawGraphs(); //Clear window
     }
+    var summary1 = "Student removals (Suspensions) from school broken down by race for High School, Middle School, and Elementary School",
+      summary2 = "Student removals from all New York City High Schools",
+      summary3 = "Student removals from all New York City Middle Schools",
+      summary4 = "Student removals from all New York City Elementary Schools";
     var myChart  = document.getElementById('myCanvas').getContext('2d');
     var myChart2 = document.getElementById('myCanvas2').getContext('2d');
     var myChart3 = document.getElementById('myCanvas3').getContext('2d');
     var myChart4 = document.getElementById('myCanvas4').getContext('2d');
+    drawSummarys(summary1, summary2,summary3, summary4);
     var newChart = new Chart(myChart, {
       type:'bar', //bar, horizontalBar, pie, line, doughnut, radar, polarArea
       data:{
@@ -633,6 +704,11 @@ var RED = 'rgba(255, 99, 132, 0.2)' ,
     if(window.testChart && window.testChart !== null){ //Check if window is being used
       redrawGraphs(); //Clear window
     }
+    var summary1 = "Student Math Section Scores on New York State standardized testing",
+      summary2 = "Student English Section Scores on New York State standardized testing",
+      summary3 = "Mean test results for NYC standaize testing on Mathematics by race and placments from Level 1 to Level 4. Students Placing in Level 1 and Level 2 are considered below proficient.  Level 3 and 4 considered proficient and above proficient",
+      summary4 = "Mean test results for NYC standaize testing on English by race and placments from Level 1 to Level 4. Students Placing in Level 1 and Level 2 are considered below proficient.  Level 3 and 4 considered proficient and above proficient";
+    drawSummarys(summary1, summary2,summary3, summary4);
       var myChart = document.getElementById('myCanvas').getContext('2d');
       var myChart2 = document.getElementById('myCanvas2').getContext('2d');
       var myChart3 = document.getElementById('myCanvas3').getContext('2d');
@@ -908,6 +984,11 @@ var RED = 'rgba(255, 99, 132, 0.2)' ,
       var myChart2 = document.getElementById('myCanvas2').getContext('2d');
       var myChart3 = document.getElementById('myCanvas3').getContext('2d');
       var myChart4 = document.getElementById('myCanvas4').getContext('2d');
+      var summary1 = "Racial demographics of children enrolled in New York City's Pre-School programs by precetage",
+        summary2 = "Racial demographics of children enrolled in New York City's Pre-School programs by total students enrolled",
+        summary3 = "Racial demographics of children enrolled in New York City's Elementary, Middle, and High School's by precetage",
+        summary4 = "Racial demographics of children enrolled in New York City's Elementary, Middle, and High School's by total students enrolled";
+    drawSummarys(summary1, summary2,summary3, summary4);
       window.testChart = new Chart(myChart, {
         type:'bar',
         data:{
@@ -1195,6 +1276,15 @@ var RED = 'rgba(255, 99, 132, 0.2)' ,
       var myChart2 = document.getElementById('myCanvas2').getContext('2d');
       var myChart3 = document.getElementById('myCanvas3').getContext('2d');
       var myChart4 = document.getElementById('myCanvas4').getContext('2d');
+      var myChart = document.getElementById('myCanvas').getContext('2d');
+      var myChart2 = document.getElementById('myCanvas2').getContext('2d');
+      var myChart3 = document.getElementById('myCanvas3').getContext('2d');
+      var myChart4 = document.getElementById('myCanvas4').getContext('2d');
+      var summary1 = "Total disciplines of students removed from class by race",
+        summary2 = "Total disciplines of students sent to principal by race",
+        summary3 = "Total disciplines of students that required Superintendent involvement by race",
+        summary4 = "Total of all disciplines by race and type of disciplines";
+      drawSummarys(summary1, summary2,summary3, summary4);
       window.testChart = new Chart(myChart, {
         type:'bar',
         data:{
@@ -1502,6 +1592,11 @@ var RED = 'rgba(255, 99, 132, 0.2)' ,
       statenIslAvg[i] = statenIslAvg[i] * 100;
       statenIslAvg[i] = statenIslAvg[i].toFixed(2);
     }
+    var summary1 = "Children under the age of three tested for lead from 2008 - 2016 by each borough of New York City by total volume of children",
+      summary2 = "Children under the age of three tested for lead from 2008 - 2016 by each borough of New York City by precetage of children",
+      summary3 = "Children under the age of six tested positive for elevated lead levels from 2008 - 2016 by each borough of New York City by volume of children.  Elevated levels ranging from five micrograms per deciliter to fifteen micrograms per deciliter",
+      summary4 = "Children under the age of six tested positive for elevated lead levels from 2008 - 2016 by each borough of New York City by precetage of children.  Elevated levels ranging from five micrograms per deciliter to fifteen micrograms per deciliter";
+    drawSummarys(summary1, summary2,summary3, summary4);
     window.testChart = new Chart(myChart, {
       type:'line',
       data:{
@@ -1787,6 +1882,11 @@ var RED = 'rgba(255, 99, 132, 0.2)' ,
     var myChart2 = document.getElementById('myCanvas2').getContext('2d');
     var myChart3 = document.getElementById('myCanvas3').getContext('2d');
     var myChart4 = document.getElementById('myCanvas4').getContext('2d');
+    var summary1 = "Total HIV diagnoses in New York City by indiviual race",
+      summary2 = "Total HIV diagnoses in New York City by each bourough",
+      summary3 = "Total HIV diagnoses in New York City by race over a timeframe from 2010 - 2013",
+      summary4 = "Total AIDS diagnoses in New York City by indiviual race";
+    drawSummarys(summary1, summary2,summary3, summary4);
     window.testChart = new Chart(myChart, {
       type:'bar',
       data:{
@@ -2073,6 +2173,11 @@ var RED = 'rgba(255, 99, 132, 0.2)' ,
     var myChart2 = document.getElementById('myCanvas2').getContext('2d');
     var myChart3 = document.getElementById('myCanvas3').getContext('2d');
     var myChart4 = document.getElementById('myCanvas4').getContext('2d');
+    var summary1 = "Total number of hospitals for each borough of New York City",
+      summary2 = "Precentage of patients who rated the hospital 9 or higher on a scale of (1 - 10) on Overall Approval",
+      summary3 = "Precentage of patients who rated the hospital 9 or higher on a scale of (1 - 10) on Overall Cleanliness",
+      summary4 = "Precentage of patients who rated the hospital 9 or higher on a scale of (1 - 10) on Overall Communication to Patients";
+    drawSummarys(summary1, summary2,summary3, summary4);
     window.testChart = new Chart(myChart, {
       type:'bar',
       data:{
@@ -2561,11 +2666,15 @@ var RED = 'rgba(255, 99, 132, 0.2)' ,
         asianInfantMortality = (402/196433)*100,
         blackInfantMortality = (1392/255177)*100,
         hispanicInfantMortality = (1181/375856)*100;
-
     whiteInfantMortality = whiteInfantMortality.toFixed(2);
     asianInfantMortality = asianInfantMortality.toFixed(2);
     blackInfantMortality = blackInfantMortality.toFixed(2);
     hispanicInfantMortality = hispanicInfantMortality.toFixed(2);
+    var summary1 = "Total deceased of New York City from 2007 - 2016 by race",
+      summary2 = "Four most common causes of death among New York City residents by race.  Non-Specific causes contains all natural and unidentified caues of death.  Malignant Neoplasm contains all forms of malignant tumors",
+      summary3 = "Total infant deaths in New York City from 2007 - 2016 by race and child's stage of development. Neonatal - Premature to Newborn.  Post Neonatal - Newborn to 2/3 months old.  Infant - 2/3 months to 2 years old",
+      summary4 = "Total infant deaths in New York City from 2007 - 2016 by precetage of total deaths per race";
+    drawSummarys(summary1, summary2,summary3, summary4);
 
     window.testChart = new Chart(myChart, {
       type:'bar',
@@ -2612,7 +2721,7 @@ var RED = 'rgba(255, 99, 132, 0.2)' ,
       options:{
         title:{
           display:true,
-          text:'Total Deceased By Race',
+          text:'Total Deceased By Race from 2007 - 2016',
           fontSize:25,
           fontFamily:'Lato'
         },
@@ -2863,7 +2972,11 @@ var RED = 'rgba(255, 99, 132, 0.2)' ,
     var myChart2 = document.getElementById('myCanvas2').getContext('2d');
     var myChart3 = document.getElementById('myCanvas3').getContext('2d');
     var myChart4 = document.getElementById('myCanvas4').getContext('2d');
-
+    var summary1 = "Total number of inmates dischared from New York City prisons from 2014 - 2019.  White and Hispanic were recorded in a single variable",
+      summary2 = "Total number of inmates admitted from New York City prisons from 2014 - 2019.  White and Hispanic were recorded in a single variable",
+      summary3 = "Inmates dischares from New York City prisons over a time of 2014 - 2019.  White and Hispanic were recorded in a single variable",
+      summary4 = "Inmates admissions from New York City prisons over a time of 2014 - 2019.  White and Hispanic were recorded in a single variable";
+    drawSummarys(summary1, summary2,summary3, summary4);
     window.testChart = new Chart(myChart, {
       type:'bar',
       data:{
@@ -3104,10 +3217,15 @@ var RED = 'rgba(255, 99, 132, 0.2)' ,
     var myChart2 = document.getElementById('myCanvas2').getContext('2d');
     var myChart3 = document.getElementById('myCanvas3').getContext('2d');
     var myChart4 = document.getElementById('myCanvas4').getContext('2d');
+    var summary1 = "Total number of inmates in New York City prisons by race",
+      summary2 = "Average of age per race of inmates in New York City Prisons",
+      summary3 = "Total number of inmates in Maximum, Medium, and Minimum security prisons by race",
+      summary4 = "Races of inmates in  New York City prisons by gender demographics";
+    drawSummarys(summary1, summary2,summary3, summary4);
     window.testChart = new Chart(myChart, {
       type:'bar',
       data:{
-        labels:['Students Removal Precentage'],
+        labels:['Inmates by Race'],
         datasets:[{
           label:'Black',
           data:[4265],
@@ -3389,6 +3507,11 @@ var RED = 'rgba(255, 99, 132, 0.2)' ,
     var myChart2 = document.getElementById('myCanvas2').getContext('2d');
     var myChart3 = document.getElementById('myCanvas3').getContext('2d');
     var myChart4 = document.getElementById('myCanvas4').getContext('2d');
+    var summary1 = "Total crimes commited in New York City by race of the offender",
+      summary2 = "Total Non-Violent crimes in New York City by the race of the offender",
+      summary3 = "Total Violent crimes in New York City by the race of the offender",
+      summary4 = "Total crimes in New York City by the race of the offender from each borough";
+    drawSummarys(summary1, summary2,summary3, summary4);
     window.testChart = new Chart(myChart,
       {
       type:'bar',
@@ -3686,6 +3809,11 @@ var RED = 'rgba(255, 99, 132, 0.2)' ,
     var myChart2 = document.getElementById('myCanvas2').getContext('2d');
     var myChart3 = document.getElementById('myCanvas3').getContext('2d');
     var myChart4 = document.getElementById('myCanvas4').getContext('2d');
+    var summary1 = "Total victims of crimes commited in New York City by race of the victim",
+      summary2 = "Total victims of Non-Violent crimes in New York City by the race of the victim",
+      summary3 = "Total victims of Violent crimes in New York City by the race of the victim",
+      summary4 = "Total victims of crimes in New York City by the race of the victim from each borough";
+    drawSummarys(summary1, summary2,summary3, summary4);
     window.testChart = new Chart(myChart, {
       type:'bar',
       data:{
@@ -3901,7 +4029,7 @@ var RED = 'rgba(255, 99, 132, 0.2)' ,
         labels:['Bronx', 'Brooklyn', 'Manhattan', 'Queens', 'Staten Island' ],
         datasets:[{
           label:'Black ',
-          data:[113, 293, 169, 328, 19],
+          data:[52540, 105738, 39626, 42917, 5984],
           backgroundColor:[BLUE_SLD, BLUE_SLD, BLUE_SLD, BLUE_SLD, BLUE_SLD],
           borderColor:[BLUE_OUT],
           borderWidth:1,
@@ -3910,7 +4038,7 @@ var RED = 'rgba(255, 99, 132, 0.2)' ,
           hoverBorderColor:'#000'
         }, {
           label:'Hispanic ',
-          data:[134, 194, 210, 529, 35],
+          data:[69488, 42077, 41176, 40999, 5529],
           backgroundColor:[YELLOW_SLD, YELLOW_SLD, YELLOW_SLD, YELLOW_SLD, YELLOW_SLD],
           borderColor:[YELLOW_OUT],
           borderWidth:1,
@@ -3919,7 +4047,7 @@ var RED = 'rgba(255, 99, 132, 0.2)' ,
           hoverBorderColor:'#000'
         }, {
           label:'White ',
-          data:[51, 345, 494, 504, 82],
+          data:[14031, 59685, 57080, 41497, 22711, ],
           backgroundColor:[PURPLE_SLD,PURPLE_SLD, PURPLE_SLD, PURPLE_SLD, PURPLE_SLD],
           borderColor:[PURPLE_OUT],
           borderWidth:1,
@@ -3928,7 +4056,7 @@ var RED = 'rgba(255, 99, 132, 0.2)' ,
           hoverBorderColor:'#000'
         }, {
           label:'Asian ',
-          data:[270, 998, 834, 4542, 84],
+          data:[3126, 10623, 11312, 25961, 1026],
           backgroundColor:[RED_SLD, RED_SLD, RED_SLD, RED_SLD, RED_SLD],
           borderColor:[RED_OUT],
           borderWidth:1,
@@ -3982,6 +4110,11 @@ var RED = 'rgba(255, 99, 132, 0.2)' ,
     var myChart2 = document.getElementById('myCanvas2').getContext('2d');
     var myChart3 = document.getElementById('myCanvas3').getContext('2d');
     var myChart4 = document.getElementById('myCanvas4').getContext('2d');
+    var summary1 = "Total public housing complexes in each New York City Borough.  Public Housing consists of standard low income housing projects across all of New York City Data for Queens on did not provide a breakdwon for each type of house, only total of all public housing projects",
+      summary2 = "Total Section 8 housing complexes in each New York City Borough.  Section 8 housing is a special form of housing projects for extremely low income (Below 50% the median income of the area) Data for Queens on did not provide a breakdwon for each type of house, only total of all public housing projects",
+      summary3 = "New York City citizens living in public housing complexes by race",
+      summary4 = "New York City citizens living in Section 8 housing complexes by race";
+    drawSummarys(summary1, summary2,summary3, summary4);
     //public housing by Borough
     window.testChart = new Chart(myChart, {
       type:'bar',
@@ -4257,6 +4390,11 @@ var RED = 'rgba(255, 99, 132, 0.2)' ,
     var myChart2 = document.getElementById('myCanvas2').getContext('2d');
     var myChart3 = document.getElementById('myCanvas3').getContext('2d');
     var myChart4 = document.getElementById('myCanvas4').getContext('2d');
+    var summary1 = "Total families in New York City public housing projects by race",
+      summary2 = "Families in Public Housing by race and the gender of the head of household",
+      summary3 = "Families in Section 8 Housing by race and the gender of the head of household",
+      summary4 = "Average families per race in Public Housing and Section 8 Housing projects";
+    drawSummarys(summary1, summary2,summary3, summary4);
     //total families in house
     window.testChart = new Chart(myChart, {
       type:'bar',
@@ -4547,13 +4685,22 @@ var RED = 'rgba(255, 99, 132, 0.2)' ,
     var myChart2 = document.getElementById('myCanvas2').getContext('2d');
     var myChart3 = document.getElementById('myCanvas3').getContext('2d');
     var myChart4 = document.getElementById('myCanvas4').getContext('2d');
+    var myChart = document.getElementById('myCanvas').getContext('2d');
+    var myChart2 = document.getElementById('myCanvas2').getContext('2d');
+    var myChart3 = document.getElementById('myCanvas3').getContext('2d');
+    var myChart4 = document.getElementById('myCanvas4').getContext('2d');
+    var summary1 = "Average time spent in housing project before relocating to non-low income housing for both Public Housing and Section 8 in years ",
+      summary2 = "Average time spent in housing project before relocating to non-low income housing for both Public Housing and Section 8 by the race of tenants in years ",
+      summary3 = "Average time spent in housing project before relocating to non-low income housing for both Public Housing and Section 8 per borough of New York City.  Data for queens did not provide a break down for each type of public housing, averaged data for all housing projects",
+      summary4 = "Average time spent in housing project before relocating to non-low income housing for both Public Housing and Section 8 by the race of tenants and the borough of the tenants";
+    drawSummarys(summary1, summary2,summary3, summary4);
     //all families average time in public housing/section8
     window.testChart = new Chart(myChart, {
       type:'bar',
       data:{
         labels:['Years in Housing'],
         datasets:[{
-          label:'Public Housing',
+          label:'Years in Public Housing',
           data:[22.3],
           backgroundColor:[BLUE_SLD],
           borderColor:[BLUE_OUT],
@@ -4562,7 +4709,7 @@ var RED = 'rgba(255, 99, 132, 0.2)' ,
           hoverBorderWidth:3,
           hoverBorderColor:'#000'
         }, {
-          label:'Section 8 Housing',
+          label:'Years in Section 8 Housing',
           data:[5],
           backgroundColor:[YELLOW_SLD],
           borderColor:[YELLOW_OUT],
@@ -4604,7 +4751,7 @@ var RED = 'rgba(255, 99, 132, 0.2)' ,
     window.testChart = new Chart(myChart2, {
       type:'bar',
       data:{
-        labels:['Public Housing', 'Section 8'],
+        labels:['Years in Public Housing', 'Years in Section 8'],
         datasets:[{
           label:'Black ',
           data:[24.8, 4.9],
@@ -4683,7 +4830,7 @@ var RED = 'rgba(255, 99, 132, 0.2)' ,
     window.testChart = new Chart(myChart3, {
       type:'bar',
       data:{
-        labels:['Public Housing', 'Section 8'],
+        labels:['Years in Public Housing', 'Years in Section 8'],
         datasets:[{
           label:'Bronx',
           data:[20.9, 4.8],
@@ -4735,7 +4882,7 @@ var RED = 'rgba(255, 99, 132, 0.2)' ,
       options:{
         title:{
           display:true,
-          text:'Average Time in Public Housing by Borough',
+          text:'Average Time in Years Spent in Public Housing by Borough',
           fontSize:25,
           fontFamily:'Lato'
         },
@@ -4806,7 +4953,7 @@ var RED = 'rgba(255, 99, 132, 0.2)' ,
       options:{
         title:{
           display:true,
-          text:'Average Time in Public Housing by Borough and Race',
+          text:'Average Time in Years Spent in Public Housing by Borough and Race',
           fontSize:25,
           fontFamily:'Lato'
         },
@@ -4840,6 +4987,11 @@ var RED = 'rgba(255, 99, 132, 0.2)' ,
     var myChart2 = document.getElementById('myCanvas2').getContext('2d');
     var myChart3 = document.getElementById('myCanvas3').getContext('2d');
     var myChart4 = document.getElementById('myCanvas4').getContext('2d');
+    var summary1 = "Average income of resident on Public Housing and Project 8 Housing.  The current average income for all New York City bouroughs is around $57,800",
+      summary2 = "Average rent for a resident in Public Housing and Project 8 Housing.  The current average rent for all New York City bouroughs is around $3,500",
+      summary3 = "Average rent and income of residents in Public Housing and Seciton 8 Housing by race of the resident",
+      summary4 = "Average rent and income of residents in Public Housing and Seciton 8 Housing by the bourough of the housing complex";
+    drawSummarys(summary1, summary2,summary3, summary4);
     //average income
     window.testChart = new Chart(myChart, {
       type:'bar',
@@ -4950,7 +5102,7 @@ var RED = 'rgba(255, 99, 132, 0.2)' ,
     window.testChart = new Chart(myChart3, {
       type:'bar',
       data:{
-        labels:['Rent', 'Income'],
+        labels:['Rent (USD - $)', 'Income (USD - $)'],
         datasets:[{
           label:'Black',
           data:[507, 24985],
@@ -5021,7 +5173,7 @@ var RED = 'rgba(255, 99, 132, 0.2)' ,
     window.testChart = new Chart(myChart4, {
       type:'bar',
       data:{
-        labels:['Rent', 'Income'],
+        labels:['Rent (USD - $)', 'Income (USD - $)'],
         datasets:[{
           label:'Bronx ',
           data:[466, 22347],
