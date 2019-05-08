@@ -5,16 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>NYC-Analysis Education</title>
+  <script type="text/javascript "src="js/scripts.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 <script>
-  //prisonAdmissions()
-  //prisonDemographics()
-  //arrestHistory()
-  //victimDemographics()
+  prisonAdmissions();
+  prisonDemographics();
+  arrestHistory();
+  victimDemographics();
 </script>
 <div class="header">
   <h1>NYC-Analysis</h1>
@@ -24,45 +25,53 @@
   <a href="education.html">Education</a>
   <a href="geographic.html">Geographic Records</a>
   <a href="crime.html">Crime Records</a>
-  <a href="all.html">All Datasets</a>
+  <!--<a href="all.html">All Datasets</a>-->
   <a href="index.html" style="float:right">Home</a>
 </div>
 <div class="row">
-  <div class="quadcolumn">
-    <div class="card" onClick="drawBarGraph()" style="hover:background-color: yellow;">
-      <h2>Prison Admissions</h2>
-      <h5>Title description, Dec 7, 2017</h5>
-      <div class="fakeimg" style="height:200px;">Image</div>
-      <p>Some text..</p>
-      <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+  <div class="quadcolumn" id="scrollbar">
+    <div class="vertical-menu">
+      <div class="card" onclick="arrestHistory()">
+        <h2>NYPD Arrest History</h2>
+      </div>
+      <div class="card" onclick="victimDemographics()">
+        <h2>Victim Demographics</h2>
+      </div>
+      <div class="card" onclick="prisonDemographics()">
+        <h2>Current Prison Demographics</h2>
+      </div>
+      <div class="card" onclick="  prisonAdmissions()">
+        <h2>Prison Admissions</h2>
+      </div>
     </div>
   </div>
-  <div class="quadcolumn">
-    <div class="card">
-      <h2>Current Prison Demographics</h2>
-      <h5>Title description, Dec 7, 2017</h5>
-      <div class="fakeimg" style="height:200px;">Image</div>
-      <p>Some text..</p>
-      <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
-    </div>
+  <div class="quadcolumn" id="graphColumn" style="width: 800px;">
+      <div id="column1" style="width:700px">
+        <canvas id="myCanvas" class="canvas" width="200" height="100"></canvas>
+      </div>
+      <div id="column2" style="width:700px">
+        <canvas id="myCanvas2" class="canvas" width="200" height="100"></canvas>
+      </div>
+      <div id="column3" style="width:700px">
+        <canvas id="myCanvas3" class="canvas" width="200" height="100"></canvas>
+      </div>
+      <div id="column4" style="width:700px">
+        <canvas id="myCanvas4" class="canvas" width="200" height="100"></canvas>
+      </div>
   </div>
-  <div class="quadcolumn">
-    <div class="card">
-      <h2>NYPD Arrest History</h2>
-      <h5>Title description, Dec 7, 2017</h5>
-      <div class="fakeimg" style="height:200px;">Image</div>
-      <p>Some text..</p>
-      <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
-    </div>
-  </div>
-  <div class="quadcolumn">
-    <div class="card">
-      <h2>Victim Demographics</h2>
-      <h5>Title description, Dec 7, 2017</h5>
-      <div class="fakeimg" style="height:200px;">Image</div>
-      <p>Some text..</p>
-      <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
-    </div>
+  <div class="quadcolumn" id="summaryColumn" style="position: relative;">
+      <div class="card"  style="height:360px;">
+        <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+      </div>
+      <div class="card"  style="height:300px;">
+        <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+      </div>
+      <div class="card"  style="height:360px;">
+        <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+      </div>
+      <div class="card" style="height:300px;">
+        <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+      </div>
   </div>
 </div>
 <div class="chartcolumn" id="column1">
