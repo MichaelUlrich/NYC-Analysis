@@ -4,8 +4,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <script type="text/javascript "src="js/scripts.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
+  <script type="text/javascript "src="js/education.js"></script>
+  <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>--> <!-- Transfer from ChartJS to D3.js-->
+  <script src="https://d3js.org/d3.v4.js"></script> <!--D3.js-->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" href="css/style.css">
 <title>NYC-Analysis Education</title>
@@ -18,7 +19,7 @@
   studentDemographics();
   disciplineReport();
 </script>
-<body>
+<body onload="studentRemovals()">
 <div class="header">
   <h1>NYC-Analysis</h1>
 </div>
@@ -35,46 +36,30 @@
     <div class="vertical-menu">
       <div class="card" onclick="studentRemovals()">
         <h2>Student Removals</h2>
-        <!--
-        <p>Student removals (Suspensions) from school broken down by race for High School, Middle School, and Elementary School</p><br>
-      -->
       </div>
       <div class="card" onclick="testResults()">
         <h2>NY State Testing Results</h2>
-        <!--
-        <p>Mean test results for NYC standaize testing on Mathematics and English by race and placments from Level 1 to Level 4.</p>
-        <p>NYS Level 1: Well below proficient</p>
-        <p>NYS Level 2: Partially proficient</p>
-        <p>NYS Level 3: Proficient</p>
-        <p>NYS Level 4: Extremely proficient</p>
-      -->
       </div>
       <div class="card" onclick="studentDemographics()">
         <h2>Student Demographics</h2>
-        <!--
-        <p>Racial demographics of students from Pre-Kindergarten classes, along with Elementary Schools, Middle Schools, High Schoools</p><br>
-      -->
       </div>
       <div class="card" onclick="disciplineReport()">
         <h2>Student Discipline Report</h2>
-        <!--
-        <p>All other forms of student disciplin broken down by student race.  This includes classroom removals, Principal involvement, Superintendent involvement</p><br>
-      -->
       </div>
     </div>
   </div>
   <div class="quadcolumn" id="graphColumn" style="width: 800px;">
       <div id="column1" style="width:700px">
-        <canvas id="myCanvas" class="canvas" width="200" height="100"></canvas>
+        <div id="myCanvas" class="canvas" width="200" height="100"></div>
       </div>
       <div id="column2" style="width:700px">
-        <canvas id="myCanvas2" class="canvas" width="200" height="100"></canvas>
+        <div id="myCanvas2" class="canvas" width="200" height="100"></div>
       </div>
       <div id="column3" style="width:700px">
-        <canvas id="myCanvas3" class="canvas" width="200" height="100"></canvas>
+        <div id="myCanvas3" class="canvas" width="200" height="100"></div>
       </div>
       <div id="column4" style="width:700px">
-        <canvas id="myCanvas4" class="canvas" width="200" height="100"></canvas>
+        <div id="myCanvas4" class="canvas" width="200" height="100"></div>
       </div>
   </div>
   <div class="quadcolumn" id="summaryColumn" style="position: relative;">

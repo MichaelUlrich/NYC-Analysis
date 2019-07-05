@@ -4,13 +4,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>NYC-Analysis Education</title>
-  <script type="text/javascript "src="js/scripts.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
+  <script type="text/javascript "src="js/crime.js"></script>
+  <script src="https://d3js.org/d3.v4.js"></script>
+  <script src="https://d3js.org/d3-scale-chromatic.v0.3.min.js"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" href="css/style.css">
+<title>NYC-Analysis Education</title>
 </head>
-<body>
+<body onload="arrestHistory()">
 <script>
   prisonAdmissions();
   prisonDemographics();
@@ -47,23 +48,23 @@
   </div>
   <div class="quadcolumn" id="graphColumn" style="width: 800px;">
       <div id="column1" style="width:700px">
-        <canvas id="myCanvas" class="canvas" width="200" height="100"></canvas>
+        <div id="myCanvas" class="canvas" width="200" height="100"></div>
       </div>
       <div id="column2" style="width:700px">
-        <canvas id="myCanvas2" class="canvas" width="200" height="100"></canvas>
+        <div id="myCanvas2" class="canvas" width="200" height="100"></div>
       </div>
       <div id="column3" style="width:700px">
-        <canvas id="myCanvas3" class="canvas" width="200" height="100"></canvas>
+        <div id="myCanvas3" class="canvas" width="200" height="100"></div>
       </div>
       <div id="column4" style="width:700px">
-        <canvas id="myCanvas4" class="canvas" width="200" height="100"></canvas>
+        <div id="myCanvas4" class="canvas" width="200" height="100"></div>
       </div>
   </div>
   <div class="quadcolumn" id="summaryColumn" style="position: relative;">
-    <div id="card1" class="card-noclick" style="height:360px;"></div>
-    <div id="card2" class="card-noclick" style="height:300px;"></div>
+    <div id="card1" class="card-noclick" style="height:400px;"></div>
+    <div id="card2" class="card-noclick" style="height:360px;"></div>
     <div id="card3" class="card-noclick" style="height:360px;"></div>
-    <div id="card4" class="card-noclick" style="height:300px;"></div>
+    <div id="card4" class="card-noclick" style="height:400px;"></div>
   </div>
 </div>
 <div class="chartcolumn" id="column1">
