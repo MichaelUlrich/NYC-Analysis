@@ -1,0 +1,43 @@
+Service,HHC Options Reduced Fee Level,Fee
+Clinic or emergency room visit for adults,1,15.00
+Clinic or emergency room visit for adults,2,20.00
+Clinic or emergency room visit for adults,3,30.00
+Clinic or emergency room visit for adults,4,40.00
+Clinic or emergency room visit for adults,5,50.00
+Clinic or emergency room visit for adults,6,60.00
+Clinic or emergency room visit for adults,7,
+Clinic or emergency room visit for children or pregnant women,1,0.00
+Clinic or emergency room visit for children or pregnant women,2,0.00
+Clinic or emergency room visit for children or pregnant women,3,0.00
+Clinic or emergency room visit for children or pregnant women,4,15.00
+Clinic or emergency room visit for children or pregnant women,5,20.00
+Clinic or emergency room visit for children or pregnant women,6,30.00
+Clinic or emergency room visit for children or pregnant women,7,
+Patient co-pays and deductibles,1,0.00
+Patient co-pays and deductibles,2,0.00
+Patient co-pays and deductibles,3,10.00
+Patient co-pays and deductibles,4,12.00
+Patient co-pays and deductibles,5,15.00
+Patient co-pays and deductibles,6,18.00
+Patient co-pays and deductibles,7,
+Prescription Drugs or Pharmacy co-pays per prescription,1,2.00
+Prescription Drugs or Pharmacy co-pays per prescription,2,6.00
+Prescription Drugs or Pharmacy co-pays per prescription,3,10.00
+Prescription Drugs or Pharmacy co-pays per prescription,4,14.00
+Prescription Drugs or Pharmacy co-pays per prescription,5,18.00
+Prescription Drugs or Pharmacy co-pays per prescription,6,22.00
+Prescription Drugs or Pharmacy co-pays per prescription,7,
+Ambulatory Surgery and MRI testing for adults and children,1,150.00
+Ambulatory Surgery and MRI testing for adults and children,2,250.00
+Ambulatory Surgery and MRI testing for adults and children,3,350.00
+Ambulatory Surgery and MRI testing for adults and children,4,450.00
+Ambulatory Surgery and MRI testing for adults and children,5,550.00
+Ambulatory Surgery and MRI testing for adults and children,6,650.00
+Ambulatory Surgery and MRI testing for adults and children,7,
+"Hospital Stays, if your savings are less than $8,000.",1,150.00
+"Hospital Stays, if your savings are less than $8,000.",2,300.00
+"Hospital Stays, if your savings are less than $8,000.",3,800.00
+"Hospital Stays, if your savings are less than $8,000.",4,1800.00
+"Hospital Stays, if your savings are less than $8,000.",5,3000.00
+"Hospital Stays, if your savings are less than $8,000.",6,5000.00
+"Hospital Stays, if your savings are less than $8,000.",7,
